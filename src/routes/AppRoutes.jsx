@@ -13,6 +13,7 @@ import OrderPage from '../features/order/ui/pages/OrderPage'
 import { hydrateUser } from '../features/auth/api/authAPI'
 import { useDispatch } from 'react-redux'
 import { addUser } from '../features/auth/state/authSlice'
+import { hydrateUserAction } from '../features/auth/state/authAction'
 
 const AppRoutes = () => {
 
@@ -20,11 +21,9 @@ const AppRoutes = () => {
 
   useEffect(()=>
   {
-    (async()=>{
+    (()=>{
         try {
-          let response = await hydrateUser();
-          console.log(response);
-          dispatch(addUser(response))
+          dispatch(hydrateUserAction())
         } catch (error) {
           console.log("Error in hydration",error);
           

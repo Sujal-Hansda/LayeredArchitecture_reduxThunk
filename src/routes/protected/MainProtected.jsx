@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Outlet } from 'react-router'
 import { store } from '../../app/store'
+import { Navigate } from 'react-router'
 
 const MainProtected = () => {
 

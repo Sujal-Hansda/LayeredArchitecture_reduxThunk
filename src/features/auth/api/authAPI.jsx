@@ -18,18 +18,5 @@ export const loginUserApi = async(credentials)=>
 
 export const hydrateUser = async()=>
 {
-  let token = localStorage.getItem('accessToken')
-  try {
-    let res = await api.get("/auth/me",{
-      headers: {
-    Authorization:`Bearer ${token}`
-  },
-    });
-    console.log("response from hydration api",res);
-    return res.data;
-    
-  } catch (error) {
-  console.log("Error in API",error);
-  
-  }
+
 };
